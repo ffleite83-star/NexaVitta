@@ -1,0 +1,13 @@
+# 02 · Manifesto
+
+O cuidado começa quando alguém decide não caminhar sozinho.
+
+Acreditamos que pedir ajuda não deveria ser um ato de coragem extrema. Que ninguém deveria enfrentar sozinho o peso da dúvida, do medo ou da incerteza.
+
+Não acreditamos em respostas prontas, soluções mágicas ou algoritmos capazes de compreender completamente uma pessoa. Acreditamos em escuta, responsabilidade, ciência e empatia.
+
+Estamos aqui para caminhar com você até o próximo passo.
+
+A NexaVitta não acredita em linhas retas. Toda jornada de cuidado possui pausas, curvas e nuances. Não acreditamos em jornadas perfeitas — acreditamos em continuidade.
+
+Fonte publicada em `content/manifesto.mdx`.

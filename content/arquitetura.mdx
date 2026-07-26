@@ -1,0 +1,26 @@
+## Stack
+
+Next.js (App Router), React, TypeScript, Tailwind, Framer Motion e MDX. Deploy na Vercel.
+
+## Por que essa stack
+
+- **Next.js + App Router**: renderização estática para o Brand Book hoje, com caminho direto para rotas dinâmicas e server actions quando o produto (cadastro, IA, matching) chegar — sem reescrever a base.
+- **MDX**: cada página de fundação é conteúdo antes de ser código. Fundadores e futuros colaboradores editam texto sem tocar em componentes.
+- **Tailwind**: design system expresso como tokens (`tailwind.config.ts`), não como CSS solto — evita divergência visual conforme o site cresce.
+- **Framer Motion**: usado pontualmente, não em todo elemento. Movimento com propósito narrativo.
+
+## Estrutura de pastas
+
+```
+docs/       → documentação interna (fundação, arquitetura, roadmap)
+brand/      → guia de marca (cor, tipografia, fotografia, movimento)
+content/    → conteúdo MDX das páginas do Brand Book
+app/        → rotas Next.js
+components/ → componentes de UI reutilizáveis
+```
+
+## Débitos técnicos conhecidos
+
+- Sem testes automatizados ainda — aceitável nesta fase de conteúdo estático, será exigido antes de qualquer feature transacional.
+- Sem CMS: conteúdo em MDX versionado no Git é suficiente para o time atual; reavaliar se colaboradores não-técnicos precisarem editar.
+- Sem internacionalização — site é pt-BR only por enquanto.
