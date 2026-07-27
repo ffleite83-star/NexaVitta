@@ -114,6 +114,48 @@ Congruência entre as preferências de estilo do paciente (C-NIP) e o autorrelat
 
 No mesmo piloto "Mágico de Oz" (Experimento 1): coletar as 4 dimensões do C-NIP + pergunta de envolvimento de cada paciente, e pedir que cada psicólogo parceiro se autoavalie nas mesmas 4 dimensões (uma vez só, não por paciente). Calcular a distância simples entre os dois perfis (planilha, sem algoritmo) e correlacionar com o score de aliança pós-sessão 1. Se a correlação for forte, isso vira a base da v1 do algoritmo de matching — antes de escrever qualquer código.
 
+## 10. Da coleta de dados à conversa
+
+Reformulando a seção anterior: os 5 sinais continuam certos (as 4 dimensões do C-NIP + expectativa de envolvimento), mas a forma de chegar até eles muda. Um formulário de 18 itens tipo Likert antes do primeiro "oi" é o oposto do que a NexaVitta é — ele coleta respostas, não compreende uma pessoa. O objetivo não é preencher um perfil, é ter uma conversa acolhedora da qual um perfil emerge.
+
+### Base técnica: como se faz isso sem virar interrogatório
+
+- **Entrevista Motivacional (OARS)** — quatro movimentos que estruturam a conversa sem parecer estruturada: perguntas abertas, afirmações, escuta reflexiva e resumos. O ponto central da EM não é extrair informação, é evocar a forma como a própria pessoa descreve sua situação — nunca impor categorias. [OARS explicado](https://www.relias.com/blog/oars-motivational-interviewing)
+- **Espírito da EM (PACE)** — Parceria (a IA explora junto, não decide por cima), Aceitação (sem julgamento sobre o que é dito), Compaixão e Evocação (puxar a perspectiva da pessoa, não preencher lacunas por ela). Isso é tom, não só técnica.
+- **Condições centrais de Rogers** — empatia (entender a partir de dentro), aceitação incondicional (sem julgamento) e congruência (a IA precisa ser genuína sobre o que é e o que está fazendo — o que já aponta para a camada ética abaixo). [Core conditions de Rogers](https://www.simplypsychology.org/client-centred-therapy.html)
+- **Evidência a favor da conversa sobre o formulário:** entrevistadores conversacionais (incluindo IA) mostraram-se mais eficazes que formulários em gerar rapport e aumentar a disposição de reportar informação sensível — inclusive em contexto militar de saúde mental, onde estigma inibe respostas diretas. [IA conversacional e disclosure](https://pmc.ncbi.nlm.nih.gov/articles/PMC11041479/)
+
+### Os mesmos 5 sinais, agora observados em vez de perguntados
+
+| Sinal | Em vez de perguntar diretamente... | ...observar na conversa aberta |
+|---|---|---|
+| Diretividade (terapeuta conduz vs. paciente guia) | "Você prefere um profissional diretivo?" | Depois de uma reflexão da IA, a pessoa pede "o que eu faço agora?" (busca condução) ou continua narrando no próprio ritmo (busca espaço)? |
+| Intensidade emocional vs. reserva | "Você quer expressar emoção abertamente?" | Densidade espontânea de linguagem emocional na resposta a uma pergunta aberta neutra ("o que te trouxe até aqui?") |
+| Passado vs. presente | "Quer focar no passado ou no presente?" | A pessoa puxa contexto/história por conta própria, ou fica no problema de agora? |
+| Suporte caloroso vs. desafio | "Prefere acolhimento ou confronto?" | Como reage a uma afirmação (OARS) que reconhece uma força dela — recebe bem, ou minimiza/desconforta? |
+| Expectativa de envolvimento | "O quanto você vai se envolver ativamente?" | A pessoa fala em termos de "quero entender" (passivo) ou "quero fazer algo a respeito" (ativo)? |
+
+Nenhuma dessas é uma pergunta fechada. São padrões que emergem de 2-3 trocas abertas conduzidas com OARS.
+
+### O turno que fecha o ciclo: transparência, não vigilância
+
+Depois da conversa aberta, a IA faz um resumo (o "S" de OARS) que é, ao mesmo tempo, o checkpoint ético: **"Pelo que você compartilhou, percebi que você parece valorizar [X] e preferir [Y]. Isso soa certo pra você?"**
+
+Isso cumpre três papéis ao mesmo tempo: é escuta reflexiva (técnica de EM), é o momento em que o perfil inferido fica visível em linguagem simples — não como score ou categoria clínica — e é o ponto em que a pessoa pode corrigir ou recusar o que foi percebido antes de qualquer matching acontecer.
+
+### Camada ética — não negociável
+
+- **Consentimento explícito antes de começar**, em linguagem simples: "Enquanto conversamos, vou perceber alguns padrões pra te ajudar a encontrar alguém com quem você se sinta em sintonia. No final te mostro o que percebi, e você decide se faz sentido." Isso é consentimento informado de verdade, não um termo de uso escondido. [Ética de IA e consentimento](https://www.galaxyweblinks.com/blog/ethical-ai-in-consent-privacy-and-trust)
+- **Perfil sempre visível e editável**, nunca inferido em silêncio — contestabilidade é parte do desenho, não um extra.
+- **Escopo travado em preferência de estilo, nunca conteúdo clínico.** Uma conversa aberta convida a pessoa a compartilhar sintomas, histórico, sofrimento — a IA precisa acolher esse conteúdo (nunca ignorar ou redirecionar de forma fria), mas seu trabalho é extrair *estilo*, não *diagnóstico*. Isso não é uma limitação técnica, é o mesmo princípio já registrado no manifesto: "ela escuta, ela nunca diagnostica" (`docs/00_FOUNDATION.md`). Qualquer sinal de risco na conversa segue o protocolo de encaminhamento humano, não é "mais um dado" para o perfil de preferência.
+- **Saída fácil, sempre.** "Prefiro pular isso e escolher manualmente" precisa estar visível a qualquer momento — sem fricção, sem culpa, sem dark pattern de reter a pessoa na conversa.
+
+### H6 e Experimento 6
+
+**H6** — Uma elicitação conversacional guiada por EM produz sinal igual ou mais preditivo de aliança na sessão 1 do que o formulário C-NIP direto (Experimento 5), com abandono menor e sensação relatada de "já me senti compreendido" maior antes mesmo da 1ª sessão com o profissional.
+
+**Experimento 6 (ainda sem IA, sem código)** — Antes de construir qualquer motor conversacional, testar com um humano treinado num roteiro leve de EM (3-4 perguntas abertas + 1 resumo-checkpoint) conduzindo essa conversa por chat de texto simples (WhatsApp, no piloto) com metade dos novos pacientes, enquanto a outra metade recebe o formulário C-NIP do Experimento 5. Comparar: taxa de conclusão, tempo até desistir, "senti que já me conheciam" (1 pergunta extra no check-in pós-sessão), e poder preditivo do perfil resultante sobre a aliança da sessão 1. Só depois de validar que a versão conversa é igual ou melhor que o formulário — em sinal e em experiência — faz sentido construir o motor de IA que faz isso em escala.
+
 ## Próxima sprint
 
 Sprint 3 — Behavioral Science: por que pacientes abandonam depois da 1ª, 3ª e 5ª sessão; o que gera adesão; o que destrói adesão. Alimenta-se do Experimento 3 acima.
