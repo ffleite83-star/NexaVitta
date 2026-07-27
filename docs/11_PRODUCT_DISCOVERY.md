@@ -73,6 +73,47 @@ Isso não se responde por opinião. Precisa de dados reais de um piloto pequeno,
 - Não tratar "preferências atendidas" (gênero, especialidade, horário) como sinônimo de "match bem-sucedido" — são a porta de entrada, não o resultado.
 - Não esperar ter uma amostra grande antes de começar — o objetivo desta sprint é rodar o Experimento 1 com o menor N possível que já produza sinal direcional (20-30 pares é suficiente para orientar a próxima sprint, não para provar estatisticamente nada ainda).
 
+## 9. Predictive Matching — sinais antes da 1ª sessão
+
+Pergunta: quais sinais coletados **antes** da primeira sessão aumentam a chance de uma boa aliança? Não diagnóstico, não transtorno — preferência de relação e de estilo de trabalho.
+
+A boa notícia: essa intuição já tem nome e instrumento validado na literatura. O que a pergunta descreve (gosta de falar vs. prefere escutar, quer objetividade vs. acolhimento, quer tarefa vs. quer espaço, quer alguém direto vs. mais afetivo) mapeia quase 1:1 no **Cooper-Norcross Inventory of Preferences (C-NIP)**, um instrumento breve (18 itens, ~5 min) e não clínico, feito exatamente para capturar preferência de estilo antes do tratamento. [C-NIP — artigo original](https://www.sciencedirect.com/science/article/pii/S1697260015000812) · [C-NIP — instrumento e guia](https://mick-cooper.squarespace.com/s/C-NIP-2015-11-03-measure.pdf)
+
+### As 4 dimensões do C-NIP
+
+1. **Diretividade do terapeuta vs. do paciente** — quer que o profissional estruture e conduza, ou quer espaço para guiar a própria conversa? (equivale a "quer tarefas" vs. "quer silêncio/espaço" da intuição original)
+2. **Intensidade emocional vs. reserva emocional** — quer expressar e explorar emoção abertamente, ou prefere um tom mais contido? (equivale a "quer acolhimento" vs. "quer objetividade")
+3. **Orientação para o passado vs. presente** — quer entender origens (história, infância), ou focar no problema atual?
+4. **Suporte caloroso vs. desafio focado** — quer validação e acolhimento, ou prefere ser confrontado e desafiado? (equivale a "mais afetivo" vs. "mais direto")
+
+### Por que isso importa mais do que dado demográfico
+
+- Meta-análise de Swift & Callahan (53 estudos, 16.000+ clientes): acomodar a preferência do cliente está associado a **79% menos chance de abandono** (OR = 1,79) e efeito positivo em resultado clínico (d = 0,28). [Swift & Callahan, meta-análise](https://pubmed.ncbi.nlm.nih.gov/30091140/)
+- Congruência de estilo interpessoal entre paciente e terapeuta prediz resultado positivo mesmo controlando gravidade do quadro e abordagem usada — ou seja, o efeito não é só "o paciente gostou mais", é sobre resultado real. [Mind and Match — matching em psicoterapia](https://www.mindandmatch.com/blog/matching-in-psychotherapy)
+- Isso é consistente com o que já vimos na seção 2: matching demográfico ajuda conversão, mas tem efeito fraco/inconsistente em resultado. Sinal de preferência de estilo parece ser o dado que realmente falta.
+
+### Um sinal extra, ainda mais forte: expectativa de envolvimento
+
+Entre os traços de cliente testados na literatura, a expectativa do próprio paciente sobre o quanto ele vai se envolver ativamente no processo foi o **maior preditor individual da aliança terapêutica** — maior que outras expectativas testadas. [Pretreatment expectations e aliança](https://pubmed.ncbi.nlm.nih.gov/22017559/)
+
+→ Proposta de sinal adicional (5º sinal, fora do C-NIP): "O quanto você imagina se envolver ativamente entre as sessões (refletir, praticar, fazer anotações)?"
+
+### Sinal descartado por enquanto: apego (attachment style)
+
+A literatura mostra que padrão de apego (seguro vs. ansioso/evitativo) correlaciona com qualidade de aliança — pacientes com apego seguro formam alianças melhores. [Apego e aliança terapêutica — meta-análise](https://www.tandfonline.com/doi/full/10.1080/10503307.2024.2370344) Mas medir apego formalmente (ex.: ECR-R) é um instrumento longo e psicologicamente carregado — perto demais de avaliação clínica para um onboarding leve, e fora do escopo desta sprint ("não diagnóstico"). Fica registrado como sinal real, não descartado para sempre, mas não entra na primeira versão.
+
+### Proposta final de sinais pré-sessão (5, não 20)
+
+As 4 dimensões do C-NIP + a pergunta de envolvimento — nada além disso na v1, para não recriar fadiga de formulário logo na entrada.
+
+### H5 — nova hipótese
+
+Congruência entre as preferências de estilo do paciente (C-NIP) e o autorrelato do psicólogo nas mesmas 4 dimensões prediz o score de aliança da 1ª sessão (seção 4) melhor do que qualquer filtro demográfico ou de especialidade.
+
+### Experimento 5 — testar H5 sem código
+
+No mesmo piloto "Mágico de Oz" (Experimento 1): coletar as 4 dimensões do C-NIP + pergunta de envolvimento de cada paciente, e pedir que cada psicólogo parceiro se autoavalie nas mesmas 4 dimensões (uma vez só, não por paciente). Calcular a distância simples entre os dois perfis (planilha, sem algoritmo) e correlacionar com o score de aliança pós-sessão 1. Se a correlação for forte, isso vira a base da v1 do algoritmo de matching — antes de escrever qualquer código.
+
 ## Próxima sprint
 
 Sprint 3 — Behavioral Science: por que pacientes abandonam depois da 1ª, 3ª e 5ª sessão; o que gera adesão; o que destrói adesão. Alimenta-se do Experimento 3 acima.
