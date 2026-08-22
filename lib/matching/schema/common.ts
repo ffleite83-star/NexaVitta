@@ -18,6 +18,10 @@ export const DimensionValue = z.object({
   value: z.number().min(1).max(7).nullable(),
   source: ProfileSource,
   recorded_at: z.string().datetime(),
+  // V0.2 (Patient Voice Discovery): a fala original que sustenta o valor.
+  // Nunca perder o RAW — a interpretação não substitui o que a pessoa disse.
+  evidence: z.string().nullable().optional(),
+  confidence: z.enum(['baixa', 'media', 'alta']).nullable().optional(),
 })
 export type DimensionValue = z.infer<typeof DimensionValue>
 

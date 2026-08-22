@@ -1,4 +1,5 @@
 import type { CaseEvent } from '../schema/events'
+import type { TranscriptRecord } from '../schema/transcript'
 import type { PatientRecord, PatientProfileRecord } from '../schema/patient'
 import type { PsychologistRecord } from '../schema/psychologist'
 
@@ -14,6 +15,8 @@ import type { PsychologistRecord } from '../schema/psychologist'
  */
 export interface CaseStore {
   appendEvent(event: CaseEvent): Promise<void>
+  saveTranscript(record: TranscriptRecord): Promise<void>
+  getTranscript(caseId: string): Promise<TranscriptRecord | null>
   getEventsForCase(caseId: string): Promise<CaseEvent[]>
   listCaseIds(): Promise<string[]>
 

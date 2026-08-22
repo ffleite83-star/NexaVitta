@@ -9,6 +9,7 @@ import { reconstructCase } from '../reconstruction/reconstruct-case'
 import type { CaseEvent } from '../schema/events'
 import type { PatientRecord, PatientProfileRecord } from '../schema/patient'
 import type { PsychologistRecord } from '../schema/psychologist'
+import type { TranscriptRecord } from '../schema/transcript'
 
 /**
  * Teste de CONTRATO da interface CaseStore (V0.1, "persistence-ready").
@@ -25,11 +26,18 @@ class InMemoryStore implements CaseStore {
   private patients = new Map<string, PatientRecord>()
   private profiles = new Map<string, PatientProfileRecord>()
   private psychologists = new Map<string, PsychologistRecord>()
+  private transcripts = new Map<string, TranscriptRecord>()
 
   async appendEvent(event: CaseEvent): Promise<void> {
     const list = this.events.get(event.case_id) ?? []
     list.push(event)
     this.events.set(event.case_id, list)
+  }
+  async saveTranscript(record: TranscriptRecord): Promise<void> {
+    this.transcripts.set(record.case_id, record)
+  }
+  async getTranscript(caseId: string): Promise<TranscriptRecord | null> {
+    return this.transcripts.get(caseId) ?? null
   }
   async getEventsForCase(caseId: string): Promise<CaseEvent[]> {
     return [...(this.events.get(caseId) ?? [])]
@@ -117,6 +125,20 @@ for (const factory of factories) {
       await store.savePatient(patient)
       assert.deepEqual(await store.getPatient('pat_c1'), patient)
       assert.equal(await store.getPatient('inexistente'), null)
+
+      const transcript: TranscriptRecord = {
+        case_id: 'case_c1',
+        input_mode: 'texto',
+        flow_version: 'conversation-flow/v1',
+        turns: [
+          { turn: 0, speaker: 'nexavitta', text: 'Oi', recorded_at: '2026-08-22T09:00:00.000Z', prompt_id: 'abertura' },
+          { turn: 1, speaker: 'paciente', text: 'Olá', recorded_at: '2026-08-22T09:00:10.000Z', prompt_id: null },
+        ],
+        created_at: '2026-08-22T09:00:00.000Z',
+      }
+      await store.saveTranscript(transcript)
+      assert.deepEqual(await store.getTranscript('case_c1'), transcript)
+      assert.equal(await store.getTranscript('inexistente'), null)
     } finally {
       await cleanup()
     }

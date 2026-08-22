@@ -19,6 +19,18 @@ export interface DecisionTrail {
     started: boolean
     completed: boolean
     abandoned_at_stage: string | null
+    response_turns: number
+    transcript_ref: string | null
+    flow_version: string | null
+  }
+  profile_review: {
+    confirmed: boolean
+    corrections: Array<{
+      dimension: string
+      previous_value: number | null
+      corrected_value: number | null
+      correction_note: string | null
+    }>
   }
   independent_readings: {
     curator_recommended: string | null
@@ -60,7 +72,8 @@ export async function reconstructCase(store: CaseStore, caseId: string): Promise
     case_id: caseId,
     event_count: sorted.length,
     timeline: [],
-    conversation: { started: false, completed: false, abandoned_at_stage: null },
+    conversation: { started: false, completed: false, abandoned_at_stage: null, response_turns: 0, transcript_ref: null, flow_version: null },
+    profile_review: { confirmed: false, corrections: [] },
     independent_readings: {
       curator_recommended: null,
       curator_reasoning: null,
@@ -87,8 +100,26 @@ export async function reconstructCase(store: CaseStore, caseId: string): Promise
       case 'conversation_started':
         trail.conversation.started = true
         break
+      case 'conversation_response':
+        trail.conversation.response_turns += 1
+        break
       case 'conversation_completed':
         trail.conversation.completed = true
+        break
+      case 'transcription_created':
+        trail.conversation.transcript_ref = ev.transcript_ref
+        trail.conversation.flow_version = ev.flow_version
+        break
+      case 'profile_confirmed':
+        trail.profile_review.confirmed = true
+        break
+      case 'profile_corrected':
+        trail.profile_review.corrections.push({
+          dimension: ev.dimension,
+          previous_value: ev.previous_value,
+          corrected_value: ev.corrected_value,
+          correction_note: ev.correction_note ?? null,
+        })
         break
       case 'conversation_abandoned':
         trail.conversation.abandoned_at_stage = ev.stage
@@ -140,8 +171,16 @@ function describeEvent(ev: CaseEvent): string {
   switch (ev.type) {
     case 'conversation_started':
       return `[${ts}] Conversa iniciada (paciente=${ev.patient_id}, canal=${ev.channel})`
+    case 'conversation_response':
+      return `[${ts}] Resposta do paciente no turno ${ev.turn} (prompt=${ev.prompt_id}, modo=${ev.input_mode})`
     case 'conversation_completed':
       return `[${ts}] Conversa concluída`
+    case 'transcription_created':
+      return `[${ts}] Transcrição registrada (${ev.turn_count} turnos, fluxo ${ev.flow_version})`
+    case 'profile_confirmed':
+      return `[${ts}] Paciente confirmou a leitura do perfil`
+    case 'profile_corrected':
+      return `[${ts}] Paciente corrigiu "${ev.dimension}": ${ev.previous_value} -> ${ev.corrected_value}`
     case 'conversation_abandoned':
       return `[${ts}] Conversa abandonada no estágio "${ev.stage}"${ev.reason ? ` (motivo: ${ev.reason})` : ''}`
     case 'profile_extracted':

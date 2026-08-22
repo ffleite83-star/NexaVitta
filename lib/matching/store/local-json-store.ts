@@ -4,6 +4,7 @@ import type { CaseStore } from './types'
 import type { CaseEvent } from '../schema/events'
 import type { PatientRecord, PatientProfileRecord } from '../schema/patient'
 import type { PsychologistRecord } from '../schema/psychologist'
+import type { TranscriptRecord } from '../schema/transcript'
 
 /**
  * Implementação de arquivo local, em JSON. Uso: fixtures, demo, simulação
@@ -14,6 +15,7 @@ import type { PsychologistRecord } from '../schema/psychologist'
  *   {baseDir}/patients/{id}.json      -> PatientRecord
  *   {baseDir}/patient_profiles/{case_id}.json -> PatientProfileRecord
  *   {baseDir}/psychologists/{id}.json -> PsychologistRecord
+ *   {baseDir}/transcripts/{case_id}.json -> TranscriptRecord (RAW da conversa)
  */
 export class LocalJsonStore implements CaseStore {
   constructor(private readonly baseDir: string) {}
@@ -46,6 +48,15 @@ export class LocalJsonStore implements CaseStore {
     const existing = (await this.readJson<CaseEvent[]>(filePath)) ?? []
     existing.push(event)
     await this.writeJson(filePath, existing)
+  }
+
+  async saveTranscript(record: TranscriptRecord): Promise<void> {
+    await this.ensureDir('transcripts')
+    await this.writeJson(this.filePath('transcripts', record.case_id), record)
+  }
+
+  async getTranscript(caseId: string): Promise<TranscriptRecord | null> {
+    return this.readJson<TranscriptRecord>(this.filePath('transcripts', caseId))
   }
 
   async getEventsForCase(caseId: string): Promise<CaseEvent[]> {

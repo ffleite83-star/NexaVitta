@@ -30,6 +30,45 @@ export const ConversationCompleted = z.object({
 })
 export type ConversationCompleted = z.infer<typeof ConversationCompleted>
 
+/**
+ * V0.2 — eventos do Patient Voice Discovery.
+ * conversation_response NÃO carrega o texto bruto — só metadado do turno.
+ * O RAW mora no TranscriptRecord (ver schema/transcript.ts), referenciado
+ * por transcription_created.
+ */
+export const ConversationResponse = z.object({
+  ...base,
+  type: z.literal('conversation_response'),
+  turn: z.number().int().min(0),
+  prompt_id: z.string(),
+  input_mode: z.enum(['texto', 'voz']),
+  response_length: z.number().int().min(0),
+})
+
+export const TranscriptionCreated = z.object({
+  ...base,
+  type: z.literal('transcription_created'),
+  transcript_ref: z.string(), // chave do TranscriptRecord no store (= case_id em V0.2)
+  turn_count: z.number().int().min(0),
+  flow_version: z.string(),
+})
+
+export const ProfileConfirmed = z.object({
+  ...base,
+  type: z.literal('profile_confirmed'),
+  confirmed_by: z.literal('paciente'),
+})
+
+export const ProfileCorrected = z.object({
+  ...base,
+  type: z.literal('profile_corrected'),
+  corrected_by: z.literal('paciente'),
+  dimension: z.string(),
+  previous_value: z.number().nullable(),
+  corrected_value: z.number().nullable(),
+  correction_note: z.string().nullable().optional(), // fala da pessoa ao corrigir, quando houver
+})
+
 export const ConversationAbandoned = z.object({
   ...base,
   type: z.literal('conversation_abandoned'),
@@ -42,7 +81,9 @@ export const ProfileExtracted = z.object({
   ...base,
   type: z.literal('profile_extracted'),
   profile: PatientProfileRecord,
-  extracted_by: z.enum(['curador_humano', 'ia_shadow']), // qual das duas leituras independentes é esta
+  // V0.2: 'regra_deterministica' = extrator heurístico do Conversation Engine
+  // (não é IA nem curador — proveniência honesta, nunca mascarada).
+  extracted_by: z.enum(['curador_humano', 'ia_shadow', 'regra_deterministica']),
 })
 export type ProfileExtracted = z.infer<typeof ProfileExtracted>
 
@@ -153,10 +194,19 @@ export const StatusChanged = z.object({
 })
 export type StatusChanged = z.infer<typeof StatusChanged>
 
+export type ConversationResponse = z.infer<typeof ConversationResponse>
+export type TranscriptionCreated = z.infer<typeof TranscriptionCreated>
+export type ProfileConfirmed = z.infer<typeof ProfileConfirmed>
+export type ProfileCorrected = z.infer<typeof ProfileCorrected>
+
 export const CaseEvent = z.discriminatedUnion('type', [
   ConversationStarted,
+  ConversationResponse,
   ConversationCompleted,
   ConversationAbandoned,
+  TranscriptionCreated,
+  ProfileConfirmed,
+  ProfileCorrected,
   ProfileExtracted,
   MathEngineComputed,
   AIShadowComputed,
