@@ -1,0 +1,149 @@
+{
+  "_aviso": "Interpretações produzidas aplicando prompts/ai-shadow/v0.1.md a cada transcrição. AVISO DE CONTAMINAÇÃO: a IA executora (claude-fable-5, manual) é o mesmo agente que escreveu os fixtures A-L e o extrator. Estes resultados validam o ENCANAMENTO do experimento; não medem capacidade real da IA. Ver docs/17, seção de limitações.",
+  "interpretations": [
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_a_diretividade", "patient_id": "pat_caso_a_diretividade",
+      "dimensions": {
+        "directiveness": { "value": 6, "confidence": "alta", "evidence": "Espero encontrar orientação, sabe? Alguém que me dê um norte e um plano, com passos claros do que fazer." },
+        "emotional_intensity": { "value": 5, "confidence": "baixa", "evidence": "Falar do que sinto vem razoavelmente fácil, sem problema." },
+        "temporal_focus": { "value": 2, "confidence": "alta", "evidence": "Acho que é mais sobre o que está acontecendo agora, a situação atual mesmo." },
+        "support_challenge": { "value": 4, "confidence": "media", "evidence": "Um pouco dos dois, mas tudo bem." }
+      },
+      "engagement": { "value": 6, "confidence": "alta", "evidence": "Gosto da ideia de levar coisas pro dia a dia, praticar entre as sessões." },
+      "notes": "Preferência clara por condução estruturada e foco no presente; meio-termo explícito entre acolhimento e provocação."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_b_autonomia", "patient_id": "pat_caso_b_autonomia",
+      "dimensions": {
+        "directiveness": { "value": 1, "confidence": "alta", "evidence": "Quero espaço para eu ir chegando nas coisas no meu tempo. Não gosto que me digam o que fazer." },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 4, "confidence": "baixa", "evidence": "Um pouco de cada, acho." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": 2, "confidence": "media", "evidence": "Prefiro que aconteça dentro das sessões mesmo." },
+      "notes": "Autonomia inequívoca; demais dimensões sem evidência firme — respostas evasivas ('depende do dia', 'também não sei bem')."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_c_emocional", "patient_id": "pat_caso_c_emocional",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 7, "confidence": "alta", "evidence": "Ando muito sensível, choro fácil e queria entender o que eu sinto. / Quero poder desabafar de verdade, falar dos meus sentimentos sem me segurar." },
+        "temporal_focus": { "value": 4, "confidence": "baixa", "evidence": "Talvez as duas coisas." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Expressão emocional aberta e desejada. À pergunta sobre condução respondeu sobre abertura emocional — sem leitura de diretividade."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_d_contido", "patient_id": "pat_caso_d_contido",
+      "dimensions": {
+        "directiveness": { "value": 5, "confidence": "baixa", "evidence": "Procuro algo racional, com lógica, prático e direto." },
+        "emotional_intensity": { "value": 1, "confidence": "alta", "evidence": "Não sou de falar de sentimento. / Prefiro ir com calma nessa parte, como falei, sou mais contido." },
+        "temporal_focus": { "value": 2, "confidence": "alta", "evidence": "É sobre o presente, claramente." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": 2, "confidence": "media", "evidence": "Não gosto de dever de casa, prefiro resolver na sessão." },
+      "notes": "Contenção emocional e foco no presente claros. 'Prático e direto' lido como leve preferência por estrutura — confiança baixa, pode se referir ao processo e não à condução."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_e_passado", "patient_id": "pat_caso_e_passado",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 5, "confidence": "baixa", "evidence": "Tranquilo falar do que sinto." },
+        "temporal_focus": { "value": 7, "confidence": "alta", "evidence": "Sinto que repito padrões que vêm da minha infância. / Quero entender minha história, de onde vem esse jeito meu. Acho que a resposta está lá atrás." },
+        "support_challenge": { "value": 4, "confidence": "baixa", "evidence": "Qualquer um dos dois." }
+      },
+      "engagement": { "value": 5, "confidence": "media", "evidence": "Posso levar reflexões pro dia a dia, sim." },
+      "notes": "Orientação à própria história muito clara e espontânea, presente já na primeira fala."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_f_presente", "patient_id": "pat_caso_f_presente",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 1, "confidence": "alta", "evidence": "Quero lidar com o que está acontecendo, a situação atual. Quero resolver isso logo. / O agora, sem dúvida. O problema atual." },
+        "support_challenge": { "value": 4, "confidence": "baixa", "evidence": "Um equilíbrio, talvez." }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Foco no presente reafirmado duas vezes. À pergunta sobre emoção respondeu sobre tempo — sem leitura emocional."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_g_suporte", "patient_id": "pat_caso_g_suporte",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 5, "confidence": "baixa", "evidence": "Consigo falar do que sinto, sim." },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": 7, "confidence": "alta", "evidence": "Preciso de acolhimento, de alguém que me escute com paciência e carinho. / Como disse, acolhimento primeiro. Quero apoio e gentileza." }
+      },
+      "engagement": { "value": 2, "confidence": "baixa", "evidence": "Prefiro dentro das sessões por enquanto." },
+      "notes": "Pedido de acolhimento explícito e repetido. À pergunta sobre tempo respondeu reforçando acolhimento — sem leitura temporal."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_h_desafio", "patient_id": "pat_caso_h_desafio",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 2, "confidence": "baixa", "evidence": "Mais o agora." },
+        "support_challenge": { "value": 1, "confidence": "alta", "evidence": "Quero alguém direto comigo, sem rodeios, que me confronte quando eu estiver me enganando. / Que me provoque mesmo, quero que me tire da zona de conforto." }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Preferência por confronto explícita e repetida. 'Mais o agora' foi resposta à pergunta emocional — li como sinal temporal fraco, não emocional."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_i_ambiguo", "patient_id": "pat_caso_i_ambiguo",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Informação insuficiente em todas as dimensões. Todas as respostas foram evasivas ou neutras."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_j_contraditorio", "patient_id": "pat_caso_j_contraditorio",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": "baixa", "evidence": "[sinais em direções opostas] Quero alguém que me dê um plano com passos claros / não gosto que me digam o que fazer... quero direção mas também quero liberdade total." },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 4, "confidence": "baixa", "evidence": "Um pouco de tudo." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Contradição explícita e consciente em diretividade ('quero direção mas também liberdade total') — não classifiquei; a ambivalência em si é o dado."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_k_abandono", "patient_id": "pat_caso_k_abandono",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Uma única fala, sem sinais de preferência. Informação insuficiente."
+    },
+    {
+      "source": "ia_shadow", "interpreter_id": "claude-fable-5/manual", "model": "claude-fable-5", "prompt_version": "ai-shadow/v0.1",
+      "case_id": "case_caso_l_correcao", "patient_id": "pat_caso_l_correcao",
+      "dimensions": {
+        "directiveness": { "value": 7, "confidence": "alta", "evidence": "Preciso de orientação, um norte. Quero um plano. / Espero encontrar passos claros e alguém que me conduza." },
+        "emotional_intensity": { "value": 5, "confidence": "baixa", "evidence": "De boa falar do que sinto." },
+        "temporal_focus": { "value": 2, "confidence": "media", "evidence": "Mais o agora." },
+        "support_challenge": { "value": 4, "confidence": "baixa", "evidence": "Equilíbrio." }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "Pedido de condução forte e repetido nas duas primeiras falas."
+    }
+  ]
+}

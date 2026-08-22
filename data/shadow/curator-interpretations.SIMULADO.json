@@ -1,0 +1,149 @@
+{
+  "_aviso": "*** DADOS SIMULADOS — NÃO SÃO DE UM PSICÓLOGO REAL. *** Este conjunto existe apenas para validar o encanamento (matriz, métricas, reveal) do experimento V0.3. Deve ser SUBSTITUÍDO pelas interpretações dos psicólogos curadores reais antes de qualquer conclusão. Nenhum número derivado desta coluna significa algo sobre a hipótese IA vs. Curador.",
+  "interpretations": [
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_a_diretividade", "patient_id": "pat_caso_a_diretividade",
+      "dimensions": {
+        "directiveness": { "value": 6, "confidence": "alta", "evidence": "Alguém que me dê um norte e um plano, com passos claros do que fazer." },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 2, "confidence": "alta", "evidence": "É mais sobre o que está acontecendo agora, a situação atual mesmo." },
+        "support_challenge": { "value": 4, "confidence": "media", "evidence": "Um pouco dos dois, mas tudo bem." }
+      },
+      "engagement": { "value": 6, "confidence": "media", "evidence": "Gosto da ideia de levar coisas pro dia a dia." },
+      "notes": "[SIMULADO] 'Razoavelmente fácil, sem problema' soa protocolar — preferi não ler abertura emocional a partir disso."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_b_autonomia", "patient_id": "pat_caso_b_autonomia",
+      "dimensions": {
+        "directiveness": { "value": 2, "confidence": "alta", "evidence": "Espaço para eu ir chegando nas coisas no meu tempo. Não gosto que me digam o que fazer." },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": 2, "confidence": "media", "evidence": "Prefiro que aconteça dentro das sessões mesmo." },
+      "notes": "[SIMULADO] 'Um pouco de cada' não é leitura de foco temporal — é esquiva. Registrei ausência."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_c_emocional", "patient_id": "pat_caso_c_emocional",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 7, "confidence": "alta", "evidence": "Choro fácil e queria entender o que eu sinto. / Desabafar de verdade, falar dos meus sentimentos sem me segurar." },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": 6, "confidence": "baixa", "evidence": "Quero poder desabafar de verdade, falar dos meus sentimentos sem me segurar." }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] Quem pede espaço para desabafar sem se segurar tende a buscar escuta receptiva antes de provocação — leitura indireta, confiança baixa."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_d_contido", "patient_id": "pat_caso_d_contido",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 2, "confidence": "alta", "evidence": "Não sou de falar de sentimento. / Sou mais contido." },
+        "temporal_focus": { "value": 2, "confidence": "alta", "evidence": "É sobre o presente, claramente." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": 2, "confidence": "media", "evidence": "Não gosto de dever de casa, prefiro resolver na sessão." },
+      "notes": "[SIMULADO] 'Prático e direto' descreve o processo desejado, não a condução — não li diretividade a partir disso."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_e_passado", "patient_id": "pat_caso_e_passado",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 5, "confidence": "baixa", "evidence": "Tranquilo falar do que sinto." },
+        "temporal_focus": { "value": 7, "confidence": "alta", "evidence": "Padrões que vêm da minha infância. / A resposta está lá atrás." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": 5, "confidence": "baixa", "evidence": "Posso levar reflexões pro dia a dia, sim." },
+      "notes": "[SIMULADO] 'Qualquer um dos dois' é neutralidade, não meio-termo ativo — registrei ausência em suporte/desafio."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_f_presente", "patient_id": "pat_caso_f_presente",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 2, "confidence": "alta", "evidence": "Quero lidar com o que está acontecendo, a situação atual. / O agora, sem dúvida." },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] 'Um equilíbrio, talvez' com hesitação — não sustenta leitura."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_g_suporte", "patient_id": "pat_caso_g_suporte",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": 5, "confidence": "media", "evidence": "Consigo falar do que sinto, sim." },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": 7, "confidence": "alta", "evidence": "Preciso de acolhimento, de alguém que me escute com paciência e carinho." }
+      },
+      "engagement": { "value": 2, "confidence": "baixa", "evidence": "Prefiro dentro das sessões por enquanto." },
+      "notes": "[SIMULADO] Contexto de luto anotado como circunstância, sem qualquer avaliação clínica. Pedido de acolhimento é o sinal dominante."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_h_desafio", "patient_id": "pat_caso_h_desafio",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 2, "confidence": "baixa", "evidence": "Mais o agora." },
+        "support_challenge": { "value": 1, "confidence": "alta", "evidence": "Alguém direto comigo, sem rodeios, que me confronte quando eu estiver me enganando." }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] Pedido de confronto muito consistente entre as falas."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_i_ambiguo", "patient_id": "pat_caso_i_ambiguo",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] Informação insuficiente. A própria indefinição pode ser o assunto da primeira sessão."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_j_contraditorio", "patient_id": "pat_caso_j_contraditorio",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": "baixa", "evidence": "[ambivalência explícita] Quero direção mas também quero liberdade total." },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] Ambivalência dita com consciência — dado valioso para o profissional que receber o caso, não para classificação."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_k_abandono", "patient_id": "pat_caso_k_abandono",
+      "dimensions": {
+        "directiveness": { "value": null, "confidence": null, "evidence": null },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": null, "confidence": null, "evidence": null },
+        "support_challenge": { "value": null, "confidence": null, "evidence": null }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] Uma única fala, ambivalente sobre começar. Informação insuficiente."
+    },
+    {
+      "source": "curador_humano", "interpreter_id": "cur_SIMULADO_placeholder",
+      "case_id": "case_caso_l_correcao", "patient_id": "pat_caso_l_correcao",
+      "dimensions": {
+        "directiveness": { "value": 7, "confidence": "alta", "evidence": "Preciso de orientação, um norte. Quero um plano. / Passos claros e alguém que me conduza." },
+        "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+        "temporal_focus": { "value": 2, "confidence": "media", "evidence": "Mais o agora." },
+        "support_challenge": { "value": 4, "confidence": "baixa", "evidence": "Equilíbrio." }
+      },
+      "engagement": { "value": null, "confidence": null, "evidence": null },
+      "notes": "[SIMULADO] 'De boa falar do que sinto' é resposta protocolar — sem leitura emocional."
+    }
+  ]
+}

@@ -84,6 +84,22 @@ export const ProfileExtracted = z.object({
   // V0.2: 'regra_deterministica' = extrator heurístico do Conversation Engine
   // (não é IA nem curador — proveniência honesta, nunca mascarada).
   extracted_by: z.enum(['curador_humano', 'ia_shadow', 'regra_deterministica']),
+  // V0.3 (IA Shadow vs. Curador) — campos opcionais, aditivos:
+  interpreter_id: z.string().nullable().optional(), // quem interpretou (curator_id, modelo da IA, versão do extrator)
+  notes: z.string().nullable().optional(), // observação qualitativa (curador) ou justificativa curta (IA)
+  model_version: z.string().nullable().optional(), // só IA
+  prompt_version: z.string().nullable().optional(), // só IA
+  // Prova estrutural de anti-ancoragem: a interpretação foi produzida SEM ver
+  // as outras. Sempre literal(false) — não há como registrar "true".
+  independence_check: z
+    .object({
+      saw_rule_output: z.literal(false),
+      saw_curator_output: z.literal(false),
+      saw_ai_output: z.literal(false),
+      saw_patient_correction: z.literal(false),
+    })
+    .nullable()
+    .optional(),
 })
 export type ProfileExtracted = z.infer<typeof ProfileExtracted>
 

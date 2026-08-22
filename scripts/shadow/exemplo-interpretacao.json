@@ -1,0 +1,14 @@
+{
+  "source": "curador_humano",
+  "interpreter_id": "cur_SEU_ID",
+  "case_id": "case_caso_a_diretividade",
+  "patient_id": "pat_caso_a_diretividade",
+  "dimensions": {
+    "directiveness": { "value": 6, "confidence": "alta", "evidence": "trecho literal da conversa" },
+    "emotional_intensity": { "value": null, "confidence": null, "evidence": null },
+    "temporal_focus": { "value": 2, "confidence": "media", "evidence": "trecho literal" },
+    "support_challenge": { "value": null, "confidence": null, "evidence": null }
+  },
+  "engagement": { "value": null, "confidence": null, "evidence": null },
+  "notes": "observação qualitativa livre (opcional)"
+}

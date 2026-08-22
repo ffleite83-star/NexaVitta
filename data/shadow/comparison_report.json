@@ -1,0 +1,1557 @@
+{
+  "generated_at": "2026-08-22T14:22:58.117Z",
+  "comparisons": [
+    {
+      "case_id": "case_caso_a_diretividade",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_a_diretividade",
+          "dimension": "directiveness",
+          "regra": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Espero encontrar orientação, sabe? Alguém que me dê um norte e um plano, com passos claros do que fazer."
+          },
+          "curador": {
+            "value": 6,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Alguém que me dê um norte e um plano, com passos claros do que fazer."
+          },
+          "ia": {
+            "value": 6,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Espero encontrar orientação, sabe? Alguém que me dê um norte e um plano, com passos claros do que fazer."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_a_diretividade",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "Falar do que sinto vem razoavelmente fácil, sem problema."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_a_diretividade",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Acho que é mais sobre o que está acontecendo agora, a situação atual mesmo."
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "É mais sobre o que está acontecendo agora, a situação atual mesmo."
+          },
+          "ia": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Acho que é mais sobre o que está acontecendo agora, a situação atual mesmo."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_a_diretividade",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "media",
+            "evidence": "Um pouco dos dois, mas tudo bem."
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "media",
+            "evidence": "Um pouco dos dois, mas tudo bem."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": false,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] 'Razoavelmente fácil, sem problema' soa protocolar — preferi não ler abertura emocional a partir disso.",
+      "ia_notes": "Preferência clara por condução estruturada e foco no presente; meio-termo explícito entre acolhimento e provocação."
+    },
+    {
+      "case_id": "case_caso_b_autonomia",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_b_autonomia",
+          "dimension": "directiveness",
+          "regra": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Quero espaço para eu ir chegando nas coisas no meu tempo. Não gosto que me digam o que fazer."
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Espaço para eu ir chegando nas coisas no meu tempo. Não gosto que me digam o que fazer."
+          },
+          "ia": {
+            "value": 1,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Quero espaço para eu ir chegando nas coisas no meu tempo. Não gosto que me digam o que fazer."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_b_autonomia",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_b_autonomia",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Um pouco de cada, acho."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_b_autonomia",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] 'Um pouco de cada' não é leitura de foco temporal — é esquiva. Registrei ausência.",
+      "ia_notes": "Autonomia inequívoca; demais dimensões sem evidência firme — respostas evasivas ('depende do dia', 'também não sei bem')."
+    },
+    {
+      "case_id": "case_caso_c_emocional",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_c_emocional",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_c_emocional",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Ando muito sensível, choro fácil e queria entender o que eu sinto. Quero poder desabafar de verdade, falar dos meus sentimentos sem me segurar. Como eu disse, me abrir não é problema, quero sentir tudo que precisar."
+          },
+          "curador": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Choro fácil e queria entender o que eu sinto. / Desabafar de verdade, falar dos meus sentimentos sem me segurar."
+          },
+          "ia": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Ando muito sensível, choro fácil e queria entender o que eu sinto. / Quero poder desabafar de verdade, falar dos meus sentimentos sem me segurar."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_c_emocional",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Talvez as duas coisas."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_c_emocional",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": 6,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "Quero poder desabafar de verdade, falar dos meus sentimentos sem me segurar."
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": false,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] Quem pede espaço para desabafar sem se segurar tende a buscar escuta receptiva antes de provocação — leitura indireta, confiança baixa.",
+      "ia_notes": "Expressão emocional aberta e desejada. À pergunta sobre condução respondeu sobre abertura emocional — sem leitura de diretividade."
+    },
+    {
+      "case_id": "case_caso_d_contido",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_d_contido",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "Procuro algo racional, com lógica, prático e direto."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_d_contido",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Procuro algo racional, com lógica, prático e direto. Não sou de falar de sentimento. Prefiro ir com calma nessa parte, como falei, sou mais contido."
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Não sou de falar de sentimento. / Sou mais contido."
+          },
+          "ia": {
+            "value": 1,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Não sou de falar de sentimento. / Prefiro ir com calma nessa parte, como falei, sou mais contido."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_d_contido",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "É sobre o presente, claramente."
+          },
+          "ia": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "É sobre o presente, claramente."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": false,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_d_contido",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] 'Prático e direto' descreve o processo desejado, não a condução — não li diretividade a partir disso.",
+      "ia_notes": "Contenção emocional e foco no presente claros. 'Prático e direto' lido como leve preferência por estrutura — confiança baixa, pode se referir ao processo e não à condução."
+    },
+    {
+      "case_id": "case_caso_e_passado",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_e_passado",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_e_passado",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "Tranquilo falar do que sinto."
+          },
+          "ia": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "Tranquilo falar do que sinto."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": false,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_e_passado",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Sinto que repito padrões que vêm da minha infância, da forma como minha família sempre funcionou. Quero entender minha história, de onde vem esse jeito meu. Acho que a resposta está lá atrás. Como falei, é sobre o passado, quero olhar pra origem das coisas."
+          },
+          "curador": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Padrões que vêm da minha infância. / A resposta está lá atrás."
+          },
+          "ia": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Sinto que repito padrões que vêm da minha infância. / Quero entender minha história, de onde vem esse jeito meu. Acho que a resposta está lá atrás."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_e_passado",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Qualquer um dos dois."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] 'Qualquer um dos dois' é neutralidade, não meio-termo ativo — registrei ausência em suporte/desafio.",
+      "ia_notes": "Orientação à própria história muito clara e espontânea, presente já na primeira fala."
+    },
+    {
+      "case_id": "case_caso_f_presente",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_f_presente",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_f_presente",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_f_presente",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Estou com um problema bem específico agora: mudei de cidade e não estou me adaptando. Quero lidar com o que está acontecendo, a situação atual. Quero resolver isso logo. O agora, sem dúvida. O problema atual."
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Quero lidar com o que está acontecendo, a situação atual. / O agora, sem dúvida."
+          },
+          "ia": {
+            "value": 1,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Quero lidar com o que está acontecendo, a situação atual. Quero resolver isso logo. / O agora, sem dúvida. O problema atual."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_f_presente",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Um equilíbrio, talvez."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] 'Um equilíbrio, talvez' com hesitação — não sustenta leitura.",
+      "ia_notes": "Foco no presente reafirmado duas vezes. À pergunta sobre emoção respondeu sobre tempo — sem leitura emocional."
+    },
+    {
+      "case_id": "case_caso_g_suporte",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_g_suporte",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_g_suporte",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "media",
+            "evidence": "Consigo falar do que sinto, sim."
+          },
+          "ia": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "Consigo falar do que sinto, sim."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": false,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_g_suporte",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_g_suporte",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Estou passando por um luto e preciso de um lugar seguro pra estar. Preciso de acolhimento, de alguém que me escute com paciência e carinho. Como disse, acolhimento primeiro. Quero apoio e gentileza."
+          },
+          "curador": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Preciso de acolhimento, de alguém que me escute com paciência e carinho."
+          },
+          "ia": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Preciso de acolhimento, de alguém que me escute com paciência e carinho. / Como disse, acolhimento primeiro. Quero apoio e gentileza."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] Contexto de luto anotado como circunstância, sem qualquer avaliação clínica. Pedido de acolhimento é o sinal dominante.",
+      "ia_notes": "Pedido de acolhimento explícito e repetido. À pergunta sobre tempo respondeu reforçando acolhimento — sem leitura temporal."
+    },
+    {
+      "case_id": "case_caso_h_desafio",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_h_desafio",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_h_desafio",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_h_desafio",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": 3,
+            "bucket": "baixo",
+            "confidence": "media",
+            "evidence": "Mais o agora."
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "baixa",
+            "evidence": "Mais o agora."
+          },
+          "ia": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "baixa",
+            "evidence": "Mais o agora."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_h_desafio",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Quero alguém direto comigo, sem rodeios, que me confronte quando eu estiver me enganando. Que me provoque mesmo, quero que me tire da zona de conforto."
+          },
+          "curador": {
+            "value": 1,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Alguém direto comigo, sem rodeios, que me confronte quando eu estiver me enganando."
+          },
+          "ia": {
+            "value": 1,
+            "bucket": "baixo",
+            "confidence": "alta",
+            "evidence": "Quero alguém direto comigo, sem rodeios, que me confronte quando eu estiver me enganando. / Que me provoque mesmo, quero que me tire da zona de conforto."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] Pedido de confronto muito consistente entre as falas.",
+      "ia_notes": "Preferência por confronto explícita e repetida. 'Mais o agora' foi resposta à pergunta emocional — li como sinal temporal fraco, não emocional."
+    },
+    {
+      "case_id": "case_caso_i_ambiguo",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_i_ambiguo",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_i_ambiguo",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_i_ambiguo",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_i_ambiguo",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] Informação insuficiente. A própria indefinição pode ser o assunto da primeira sessão.",
+      "ia_notes": "Informação insuficiente em todas as dimensões. Todas as respostas foram evasivas ou neutras."
+    },
+    {
+      "case_id": "case_caso_j_contraditorio",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_j_contraditorio",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": "baixa",
+            "evidence": "[sinais conflitantes] Quero alguém que me dê um plano com passos claros, mas ao mesmo tempo não gosto que me digam o que fazer. É isso, quero direção mas também quero liberdade total."
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": "baixa",
+            "evidence": "[ambivalência explícita] Quero direção mas também quero liberdade total."
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": "baixa",
+            "evidence": "[sinais em direções opostas] Quero alguém que me dê um plano com passos claros / não gosto que me digam o que fazer... quero direção mas também quero liberdade total."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_j_contraditorio",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_j_contraditorio",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Um pouco de tudo."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_j_contraditorio",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] Ambivalência dita com consciência — dado valioso para o profissional que receber o caso, não para classificação.",
+      "ia_notes": "Contradição explícita e consciente em diretividade ('quero direção mas também liberdade total') — não classifiquei; a ambivalência em si é o dado."
+    },
+    {
+      "case_id": "case_caso_k_abandono",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_k_abandono",
+          "dimension": "directiveness",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_k_abandono",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_k_abandono",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_k_abandono",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": true,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] Uma única fala, ambivalente sobre começar. Informação insuficiente.",
+      "ia_notes": "Uma única fala, sem sinais de preferência. Informação insuficiente."
+    },
+    {
+      "case_id": "case_caso_l_correcao",
+      "ready": true,
+      "missing": [],
+      "rows": [
+        {
+          "case_id": "case_caso_l_correcao",
+          "dimension": "directiveness",
+          "regra": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Preciso de orientação, um norte. Quero um plano. Espero encontrar passos claros e alguém que me conduza."
+          },
+          "curador": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Preciso de orientação, um norte. Quero um plano. / Passos claros e alguém que me conduza."
+          },
+          "ia": {
+            "value": 7,
+            "bucket": "alto",
+            "confidence": "alta",
+            "evidence": "Preciso de orientação, um norte. Quero um plano. / Espero encontrar passos claros e alguém que me conduza."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_l_correcao",
+          "dimension": "emotional_intensity",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "ia": {
+            "value": 5,
+            "bucket": "alto",
+            "confidence": "baixa",
+            "evidence": "De boa falar do que sinto."
+          },
+          "ia_igual_curador": false,
+          "regra_igual_curador": true,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_l_correcao",
+          "dimension": "temporal_focus",
+          "regra": {
+            "value": 3,
+            "bucket": "baixo",
+            "confidence": "media",
+            "evidence": "Mais o agora."
+          },
+          "curador": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "media",
+            "evidence": "Mais o agora."
+          },
+          "ia": {
+            "value": 2,
+            "bucket": "baixo",
+            "confidence": "media",
+            "evidence": "Mais o agora."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": true,
+          "regra_igual_ia": true,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        },
+        {
+          "case_id": "case_caso_l_correcao",
+          "dimension": "support_challenge",
+          "regra": {
+            "value": null,
+            "bucket": "sem_leitura",
+            "confidence": null,
+            "evidence": null
+          },
+          "curador": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Equilíbrio."
+          },
+          "ia": {
+            "value": 4,
+            "bucket": "medio",
+            "confidence": "baixa",
+            "evidence": "Equilíbrio."
+          },
+          "ia_igual_curador": true,
+          "regra_igual_curador": false,
+          "regra_igual_ia": false,
+          "ambos_incertos": false,
+          "todos_divergem": false
+        }
+      ],
+      "curator_notes": "[SIMULADO] 'De boa falar do que sinto' é resposta protocolar — sem leitura emocional.",
+      "ia_notes": "Pedido de condução forte e repetido nas duas primeiras falas."
+    }
+  ],
+  "metrics": {
+    "cases_compared": 12,
+    "per_dimension": {
+      "directiveness": {
+        "ia_x_curador": 11,
+        "regra_x_curador": 12,
+        "regra_x_ia": 11,
+        "total": 12
+      },
+      "emotional_intensity": {
+        "ia_x_curador": 10,
+        "regra_x_curador": 10,
+        "regra_x_ia": 8,
+        "total": 12
+      },
+      "temporal_focus": {
+        "ia_x_curador": 9,
+        "regra_x_curador": 11,
+        "regra_x_ia": 8,
+        "total": 12
+      },
+      "support_challenge": {
+        "ia_x_curador": 9,
+        "regra_x_curador": 9,
+        "regra_x_ia": 8,
+        "total": 12
+      }
+    },
+    "nulls": {
+      "regra": 36,
+      "curador": 30,
+      "ia": 23
+    },
+    "ia_curador_concordam_regra_diverge": 5,
+    "regra_ia_concordam_curador_diverge": 1,
+    "todos_divergem": 0,
+    "ambos_incertos": 22,
+    "divergencias_com_evidencia": [
+      {
+        "case_id": "case_caso_a_diretividade",
+        "dimension": "emotional_intensity",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 5,
+          "evidence": "Falar do que sinto vem razoavelmente fácil, sem problema."
+        }
+      },
+      {
+        "case_id": "case_caso_b_autonomia",
+        "dimension": "temporal_focus",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 4,
+          "evidence": "Um pouco de cada, acho."
+        }
+      },
+      {
+        "case_id": "case_caso_c_emocional",
+        "dimension": "temporal_focus",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 4,
+          "evidence": "Talvez as duas coisas."
+        }
+      },
+      {
+        "case_id": "case_caso_c_emocional",
+        "dimension": "support_challenge",
+        "curador": {
+          "value": 6,
+          "evidence": "Quero poder desabafar de verdade, falar dos meus sentimentos sem me segurar."
+        },
+        "ia": {
+          "value": null,
+          "evidence": null
+        }
+      },
+      {
+        "case_id": "case_caso_d_contido",
+        "dimension": "directiveness",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 5,
+          "evidence": "Procuro algo racional, com lógica, prático e direto."
+        }
+      },
+      {
+        "case_id": "case_caso_e_passado",
+        "dimension": "support_challenge",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 4,
+          "evidence": "Qualquer um dos dois."
+        }
+      },
+      {
+        "case_id": "case_caso_f_presente",
+        "dimension": "support_challenge",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 4,
+          "evidence": "Um equilíbrio, talvez."
+        }
+      },
+      {
+        "case_id": "case_caso_j_contraditorio",
+        "dimension": "temporal_focus",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 4,
+          "evidence": "Um pouco de tudo."
+        }
+      },
+      {
+        "case_id": "case_caso_l_correcao",
+        "dimension": "emotional_intensity",
+        "curador": {
+          "value": null,
+          "evidence": null
+        },
+        "ia": {
+          "value": 5,
+          "evidence": "De boa falar do que sinto."
+        }
+      }
+    ]
+  }
+}
