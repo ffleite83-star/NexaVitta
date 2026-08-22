@@ -4,6 +4,8 @@
 
 **Regra desta entrega:** nenhuma linha de código. Esta é a proposta de arquitetura para aprovação antes da implementação.
 
+> **Atualização:** este documento segue valendo para o modelo de dados (paciente/psicólogo), a fórmula de compatibilidade e a decisão de não expor score ao paciente. A partir da arquitetura de 4 camadas (Motor Matemático, IA Shadow, Curadoria Humana, Resultado Real), a referência oficial é `docs/13_MATCHING_ARCHITECTURE.md`.
+
 ---
 
 ## 1. Diagnóstico do estado atual
