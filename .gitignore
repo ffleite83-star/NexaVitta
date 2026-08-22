@@ -29,3 +29,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# dado gerado pelas simulações do Data Backbone V0 — regenerável via
+# scripts/matching/simulate-*.ts, nunca deve conter dado real (ver docs/14).
+data/fixtures/store/

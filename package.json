@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test:matching": "tsx --test lib/matching/__tests__/*.test.ts"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.0.1",
@@ -14,7 +15,8 @@
     "framer-motion": "^11.11.17",
     "next": "14.2.35",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@types/mdx": "^2.0.13",
@@ -24,6 +26,7 @@
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14",
+    "tsx": "^4.23.1",
     "typescript": "^5.6.3"
   }
 }
