@@ -54,9 +54,7 @@ npm run test:matching
 
 Dado sintético (fixtures/demo, gerado pelos scripts acima): `data/fixtures/store/`, dentro do próprio repositório — seguro porque não é dado real, e o repositório é público.
 
-Dado real de paciente ou psicólogo: **decisão tomada pelo CEO em 2026-08-22.** Dado real vai morar em um repositório privado separado no primeiro momento, com migração posterior avaliada para Supabase (ou banco gerenciado equivalente). A arquitetura já está pensada nesse sentido: `CaseStore` é uma interface, `LocalJsonStore` é uma implementação — trocar o destino do dado é escrever uma nova implementação, não reescrever o sistema. Enquanto não houver dado real de paciente, nada muda e o repositório público segue como está.
-
-**PREMISSA DE LANÇAMENTO (GRAVE — bloqueante, não negociável):** antes de qualquer caso real entrar no sistema, o armazenamento de dado real precisa estar fora deste repositório público — seja no repositório privado separado, seja tornando este repositório privado, seja em banco gerenciado. Nenhum dado real de paciente ou psicólogo pode jamais ser commitado aqui enquanto o repositório for público. Este parágrafo existe para que essa premissa apareça em qualquer revisão de checklist de lançamento.
+Dado real de paciente ou psicólogo: regido pelo **Launch Gate** (`docs/15_LAUNCH_GATE.md`, atualizado em 2026-08-22 por decisão do CEO). Nenhum dado real entra no ambiente atual antes de infraestrutura privada apropriada e validada; a escolha específica de infraestrutura (repositório privado, Supabase/Postgres, outra) será tomada antes do primeiro paciente real. A arquitetura já está preparada: `CaseStore` é uma interface, `LocalJsonStore` é a implementação de fixtures/demo, e `createDemoStore()` (`lib/matching/store/demo-store.ts`) é o ponto único de troca — swappabilidade provada por teste de contrato. Enquanto só houver dado sintético, o repositório público segue como está.
 
 ## 5. Confronto — pontos que quero deixar registrados, não só o que foi pedido
 
@@ -70,7 +68,7 @@ Dado real de paciente ou psicólogo: **decisão tomada pelo CEO em 2026-08-22.**
 
 ## 6. Decisões que precisam do CEO
 
-1. ~~Onde o primeiro dado real de paciente/psicólogo vai morar~~ — **decidido (2026-08-22): repositório privado separado primeiro, Supabase avaliado depois.** Vira premissa de lançamento, ver seção 4.
+1. ~~Onde o primeiro dado real de paciente/psicólogo vai morar~~ — **regido pelo Launch Gate (`docs/15_LAUNCH_GATE.md`): decisão de infraestrutura adiada até antes do primeiro paciente real; bloqueio registrado como premissa oficial de lançamento.**
 2. Se topa formalizar, como regra de processo (não de código), que quem roda a IA Shadow manual em V0 faça isso antes de ver qualquer outra saída do caso — ou que seja sempre uma pessoa diferente do curador (seção 5).
 3. Se o piso de 10 sessões para perfil observado do psicólogo deve começar mais baixo dado o tamanho do pool inicial (seção 5) — decisão que pode esperar até termos volume real, mas que vale já estar no radar.
 

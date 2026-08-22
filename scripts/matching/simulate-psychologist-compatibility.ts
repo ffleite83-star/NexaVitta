@@ -1,5 +1,5 @@
-import { LocalJsonStore } from '../../lib/matching/store/local-json-store'
-import { seedPsychologists, STORE_DIR } from './seed-psychologists'
+import { createDemoStore, DEMO_STORE_DIR } from '../../lib/matching/store/demo-store'
+import { seedPsychologists } from './seed-psychologists'
 import { findCompatiblePatientsForPsychologist } from '../../lib/matching/engine/reverse-compatibility'
 import type { PatientProfileRecord } from '../../lib/matching/schema/patient'
 import { PROFILE_SCHEMA_VERSION } from '../../lib/matching/versions'
@@ -20,7 +20,7 @@ function dim(value: number) {
  * depender de ordem de execução dos scripts.)
  */
 async function main() {
-  const store = new LocalJsonStore(STORE_DIR)
+  const store = createDemoStore()
   await seedPsychologists(store)
 
   const profiles: PatientProfileRecord[] = [
@@ -78,7 +78,7 @@ async function main() {
     console.log(JSON.stringify(result, null, 2))
   }
 
-  console.log(`\nDados salvos em: ${STORE_DIR}`)
+  console.log(`\nDados salvos em: ${DEMO_STORE_DIR}`)
 }
 
 main().catch((err) => {

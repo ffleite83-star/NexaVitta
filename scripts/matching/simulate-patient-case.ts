@@ -1,5 +1,5 @@
-import { LocalJsonStore } from '../../lib/matching/store/local-json-store'
-import { seedPsychologists, STORE_DIR } from './seed-psychologists'
+import { createDemoStore, DEMO_STORE_DIR } from '../../lib/matching/store/demo-store'
+import { seedPsychologists } from './seed-psychologists'
 import { runMathEngine, styleFloorWarning } from '../../lib/matching/engine/math-engine'
 import {
   recordCuratorIndependentJudgment,
@@ -35,7 +35,7 @@ function eventId(prefix: string, n: number) {
  * Rodar: npx tsx scripts/matching/simulate-patient-case.ts
  */
 async function main() {
-  const store = new LocalJsonStore(STORE_DIR)
+  const store = createDemoStore()
   await seedPsychologists(store)
 
   // ---------- Caso 1: jornada completa, convertido ----------
@@ -228,7 +228,7 @@ async function main() {
   console.log('\n=== Caso abandonado (não-convertido): decision trail ===\n')
   console.log(JSON.stringify(await reconstructCase(store, abandonedCaseId), null, 2))
 
-  console.log(`\nDados salvos em: ${STORE_DIR}`)
+  console.log(`\nDados salvos em: ${DEMO_STORE_DIR}`)
 }
 
 main().catch((err) => {

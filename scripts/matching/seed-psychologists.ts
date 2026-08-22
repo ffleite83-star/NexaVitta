@@ -1,8 +1,5 @@
-import path from 'path'
-import { LocalJsonStore } from '../../lib/matching/store/local-json-store'
+import type { CaseStore } from '../../lib/matching/store/types'
 import type { PsychologistRecord } from '../../lib/matching/schema/psychologist'
-
-export const STORE_DIR = path.join(process.cwd(), 'data', 'fixtures', 'store')
 
 function dim(value: number) {
   return { value, source: 'paciente_declarado' as const, recorded_at: '2026-08-01T00:00:00.000Z' }
@@ -75,7 +72,7 @@ export function syntheticPsychologists(): PsychologistRecord[] {
   ]
 }
 
-export async function seedPsychologists(store: LocalJsonStore) {
+export async function seedPsychologists(store: CaseStore) {
   for (const psy of syntheticPsychologists()) {
     await store.savePsychologist(psy)
   }
