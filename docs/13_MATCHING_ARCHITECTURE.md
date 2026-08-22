@@ -4,7 +4,11 @@
 
 **Status:** referência oficial de arquitetura conceitual do matching. Substitui as decisões de UX/score de `docs/12_MATCHING_V1.md` no que for conflitante; o resto de `docs/12` (modelo de dados de paciente/psicólogo, restrição logística, reclassificação da Sprint 2) continua valendo e é a base sobre a qual esta arquitetura é construída. Nenhuma linha de código foi alterada para produzir este documento.
 
-**Nota sobre a fonte:** o PDF `NexaVitta_Modelo_Curadoria_e_AI_Shadow.pdf` não chegou anexado — este documento foi construído a partir da especificação detalhada enviada em texto. Se o PDF tiver conteúdo adicional, revisar este documento depois de recebê-lo.
+**Nota sobre a fonte:** reconciliado com o PDF `NexaVitta_Modelo_Curadoria_e_AI_Shadow.pdf` ("modelo conceitual fechado para a fase de lançamento"), recebido após a primeira versão deste documento. Onde o PDF define algo com mais precisão (dimensões e estados do AI Readiness Index, a experiência "Desafie a IA", os 10 princípios fechados), este documento foi atualizado para segui-lo como fonte primária. Onde ainda discordo de algum ponto, isso fica marcado explicitamente como observação — nunca sobrescrito em silêncio.
+
+**Os 10 princípios fechados no PDF** (citados aqui porque orientam qualquer decisão de implementação): matemática desde o primeiro caso · IA desde o primeiro caso, inicialmente em shadow mode · curadoria humana feita por psicólogo · resultado real é o critério final de aprendizado · dados de não conversão também podem ser valiosos · modelos e prompts devem ser versionados · a IA não diagnostica nem substitui o profissional · o usuário mantém autonomia e pode discordar da recomendação · a coleta e o uso de dados precisam de consentimento e governança adequados · a sofisticação do modelo cresce conforme cresce a evidência.
+
+*Este documento descreve um modelo de produto e operação; não constitui orientação jurídica, regulatória ou clínica (herdado do PDF original, e vale igualmente aqui).*
 
 ---
 
@@ -98,6 +102,17 @@ case_id
 
 Isso não é burocracia — é o que torna possível, mais adiante, perguntar "quando a IA discordou do curador, quem estava mais perto do resultado real?" sem precisar reconstruir nada retroativamente.
 
+**Exemplo ilustrativo** (formato do PDF de referência — útil para visualizar o que a tabela de casos vai parecer):
+
+| Caso | Matemático | IA | Curador | Resultado |
+|---|---|---|---|---|
+| 001 | A | B | B | 3 sessões |
+| 002 | A | A | A | Abandono |
+| 003 | C | B | B | 1 sessão |
+| 004 | B | C | B | 7 sessões |
+
+O objetivo nunca é declarar um vencedor por caso isolado — é acumular casos suficientes para enxergar padrões de erro, acerto e complementaridade entre as três hipóteses.
+
 ## 5. Papel do Psicólogo Curador — fluxo operacional
 
 **Quando é acionado:** depois que a conversa é completada e o perfil mínimo (≥2 dimensões) existe, antes de qualquer recomendação ser mostrada ao paciente.
@@ -112,34 +127,58 @@ Isso não é burocracia — é o que torna possível, mais adiante, perguntar "q
 
 ## 6. AI Readiness Index
 
-Não é a IA que decide que está pronta — é um índice objetivo, revisado por humanos, com critérios definidos antes de qualquer avaliação real. Os thresholds abaixo são **hipóteses iniciais**, não constantes científicas — servem para começar a medir, e devem ser recalibrados assim que houver dado suficiente para questioná-los.
+Não é a IA que decide que está pronta — é um índice objetivo, calculado a partir de critérios definidos antes de qualquer avaliação real, nunca por autodeclaração do modelo. As dimensões e estados abaixo seguem o PDF de referência (fechado); os números de threshold continuam sendo **hipóteses iniciais**, não constantes científicas, e devem ser recalibrados assim que houver dado suficiente para questioná-los.
 
-**Dimensões e métricas propostas:**
+**Dimensões (conforme o PDF, fonte canônica):**
 
-1. **Volume de casos completos** — nº de casos com decision trail inteiro (perfil, matemática, IA, curador, resultado). *Hipótese de piso: 30-50 casos antes de sair do shadow puro.*
-2. **Qualidade da extração de perfil** — o quão perto a hipótese de perfil da IA fica do perfil extraído pelo humano, avaliado por amostragem manual (o curador revisa uma amostra e marca concordância). *Hipótese: ≥70% de concordância "próxima" antes de considerar a IA como substituta da extração manual.*
-3. **Taxa de concordância IA-curador na decisão final** — não IA-matemática; o curador é o padrão-ouro provisório até haver resultado real suficiente. *Hipótese: ≥70-80% sustentado por vários casos consecutivos antes de aumentar autonomia.*
-4. **Estabilidade/reprodutibilidade** — mesma conversa, mesma versão de prompt, gera perfil e ordenação consistentes ao reprocessar. Testável a qualquer momento, sem depender de volume.
-5. **Correlação com resultado real** — só mensurável depois de haver volume de desfechos reais (continuidade, abandono); é a métrica mais importante a longo prazo e a última a ficar disponível.
+1. **Volume de casos válidos** — nº de casos com decision trail completo. *Hipótese de piso: 30-50 casos antes de sair da observação pura.*
+2. **Cobertura de diferentes perfis e situações** — a IA só é avaliável de verdade se viu variedade, não só casos parecidos. *Isso é uma das razões pelas quais a experiência "Desafie a IA" (seção 8) é valiosa mais adiante: ela gera volume de conversas com perfis diversos, mesmo sem conversão em atendimento.*
+3. **Qualidade e completude dos dados** — proporção de casos com perfil mínimo (≥2 dimensões) e conversa registrada de forma reconstruível.
+4. **Estabilidade das recomendações** — mesma conversa, mesma versão de prompt, gera perfil e ordenação consistentes ao reprocessar.
+5. **Concordância/divergência em relação ao motor matemático** — métrica do PDF, mantida.
+6. **Evidência de desempenho contra resultados observados** — correlação entre a hipótese da IA e o resultado real (continuidade, abandono); só mensurável depois de haver volume de desfechos.
+7. **Consistência entre versões do modelo** — mudanças de versão não podem gerar deriva silenciosa nas recomendações.
 
-**Estados de maturidade:**
+**Observação que mantenho (não está no PDF, é minha adição):** concordância com o motor matemático (dimensão 5) é um sinal mais fraco do que concordância com o curador — a matemática é uma fórmula trivial e transparente, e uma IA cara "acertar" uma média ponderada de 4 números prova relativamente pouco. Proponho rastrear como **dimensão adicional, não substituta**: *concordância/divergência em relação à decisão do curador*. Custa zero a mais para medir (o dado já existe no decision trail) e é o sinal que eu mais confiaria para autorizar mais autonomia.
 
-- **Shadow puro** — IA roda em paralelo, zero autoridade, 100% registrado. Estado inicial, do caso #1.
-- **Shadow assistido** — a hipótese da IA passa a ser visível ao curador (depois do reveal, nunca antes do julgamento independente dele), como "segunda opinião" explícita, ainda sem poder de decisão.
-- **Produção controlada** — a IA pode gerar a ordenação inicial que o Motor Matemático gerava, mas todo caso ainda passa pelo curador antes de qualquer coisa chegar ao paciente.
-- **Produção com autonomia parcial** — a IA decide sozinha apenas nos casos em que sua própria confiança declarada está acima de um limiar (a definir com dado real), com o curador revisando por amostragem, não caso a caso.
+**Estados conceituais (conforme o PDF, fonte canônica):**
 
-**Quem autoriza cada transição:** o Psicólogo Curador Líder junto com o CEO — nunca a IA, nunca só engenharia ou produto isoladamente, dado que envolve julgamento clínico-adjacente.
+```
+OBSERVAÇÃO → SHADOW VALIDADO → CANDIDATA A PILOTO → PRODUÇÃO CONTROLADA
+```
 
-## 7. Evolução — V0 → V1 → V2 → Data-driven → ML
+- **Observação** — a IA roda em paralelo, zero autoridade, tudo registrado. Estado inicial, do caso #1.
+- **Shadow Validado** — volume e estabilidade mínimos atingidos; a hipótese da IA já pode ser mostrada ao curador como segunda opinião explícita (sempre depois do julgamento independente dele, seção 5), ainda sem poder de decisão.
+- **Candidata a Piloto** — evidência de concordância (com curador e com resultado real, quando já houver) suficiente para propor um piloto controlado, com supervisão obrigatória caso a caso.
+- **Produção Controlada** — a IA participa ativamente da recomendação com supervisão humana ainda presente, não autônoma.
+
+A passagem de uma etapa para outra é decisão de governança baseada nesses critérios, nunca em quantidade bruta de usuários — e, como já registrado em `docs/12`, nunca antes de validação jurídica/regulatória (LGPD, CFP, sigilo, protocolo de risco).
+
+**Quem autoriza cada transição:** o Psicólogo Curador Líder junto com o CEO — nunca a IA, nunca só engenharia ou produto isoladamente.
+
+## 7. "Desafie a IA" — experiência pública de lançamento (fase posterior, não V0)
+
+O PDF propõe, para depois que a infraestrutura estiver madura, transformar o próprio mecanismo de aprendizado em uma experiência pública: convidar qualquer pessoa a contar sua história, receber uma hipótese de compatibilidade da IA, e dizer se ela "acertou" — gerando um loop de curiosidade → mais conversas → mais dados → melhor perfilamento → mais pessoas querem testar. Com consentimento adequado, essas interações alimentam o aprendizado mesmo sem conversão em atendimento — e, por gerar volume de perfis diversos, essa experiência é diretamente útil para a dimensão de "cobertura" do AI Readiness Index (seção 6).
+
+Concordo com o conceito, mas com três ressalvas que trato como bloqueantes de sequenciamento, não de mérito:
+
+**1. Não é V0/V1.** O próprio PDF já condiciona a ativação a pipeline de dados, consentimento, segurança, versionamento e governança prontos — reforço isso: essa experiência não deveria ser cogitada antes de a IA sair do estado "Observação" (seção 6), e certamente não antes da validação jurídica/regulatória bloqueante já registrada em `docs/12`.
+
+**2. Pré-requisito de oferta, não só de infraestrutura.** Com 3-4 psicólogos parceiros, uma campanha pública gerando volume de curiosos sem profundidade de oferta real por trás vira só entretenimento — não constrói funil de fato. "Desafie a IA" faz sentido depois de já existir uma base mínima de profissionais capaz de sustentar conversões reais geradas pelo interesse público, não antes.
+
+**3. Tensão de tom com a voz da marca.** O manifesto já registrado (`docs/00_FOUNDATION.md`, `docs/11`) define a voz da NexaVitta como calma, clara e presente — "nunca performática". Um posicionamento como "Você acha que consegue enganar a IA?" carrega uma energia de quiz viral genérico que destoa desse tom, especialmente tratando-se de um produto adjacente a saúde mental. Proponho manter o conceito (contar a própria história, ver se o sistema entendeu) mas suavizar o enquadramento — algo como "Conte sua história. Veja se a NexaVitta entendeu" em vez de linguagem de "enganar" — antes de qualquer copy final.
+
+**Segmentação de dado, adição minha:** toda interação vinda dessa experiência pública deve ser marcada com uma proveniência distinta (`source: desafio_publico`, diferente de `paciente_real`) e nunca misturada nas métricas que dependem de resultado clínico real (concordância com curador em casos reais, correlação com continuidade) — quem está testando por curiosidade não é um paciente, e tratar os dois like o mesmo tipo de evento contaminaria exatamente as métricas que o AI Readiness Index precisa ter limpas.
+
+## 8. Evolução — V0 → V1 → V2 → Data-driven → ML
 
 - **V0 / Shadow (agora):** tudo manual — conversa por humano, extração de perfil por humano, Motor Matemático como fórmula simples (planilha ou script pequeno), IA Shadow como prompt versionado rodado manualmente por uma pessoa, curador decidindo com o fluxo da seção 5. Nenhuma infraestrutura de produto além de uma planilha/registro estruturado único.
 - **V1:** automatiza o que já provou valor sem exigir volume — cálculo do Motor Matemático (elimina erro manual de conta), armazenamento estruturado único, painel mínimo de acompanhamento. IA Shadow continua manual se o volume ainda for baixo o suficiente para isso não ser gargalo.
 - **V2:** só depois de cruzar os pisos do AI Readiness Index — automatiza a chamada da IA Shadow (deixa de ser copiar-colar), interface de autoatendimento para o paciente escolher, pesos diferenciados por dimensão com base em dado real, uso do `observed_profile` do psicólogo (`docs/12`, seção 5).
-- **Data-driven:** volume suficiente (hipótese: algumas centenas de casos com desfecho conhecido) para analisar estatisticamente qual camada (matemática, IA, curador) mais se aproxima do resultado real, por dimensão e por tipo de caso.
+- **Data-driven:** volume suficiente (hipótese: algumas centenas de casos com desfecho conhecido) para analisar estatisticamente qual camada (matemática, IA, curador) mais se aproxima do resultado real, por dimensão e por tipo de caso. É também o momento mais provável para ativar "Desafie a IA" (seção 7) — depois de já haver base de psicólogos e maturidade de governança suficientes para a campanha gerar funil real, não só entretenimento.
 - **ML / predictive matching:** só depois de Data-driven mostrar que existe sinal real a aprender — nunca antes disso, para não otimizar ruído.
 
-## 8. Simplicidade preservada — o que fica manual, o que não construímos ainda
+## 9. Simplicidade preservada — o que fica manual, o que não construímos ainda
 
 Fica manual por enquanto: a conversa de onboarding, a extração de perfil por humano, a autoavaliação do psicólogo, o check-in pós-sessão, a chamada da IA Shadow (copiar-colar num prompt versionado), a curadoria (pode viver numa planilha/documento compartilhado, não precisa de interface própria).
 
@@ -147,12 +186,14 @@ Vale automatizar já, é barato: o cálculo do Motor Matemático e o armazenamen
 
 Não construímos ainda: nenhum serviço de IA em produção, nenhuma interface de paciente para autoatendimento, nenhum pipeline automatizado de extração de perfil por IA, nenhum modelo de ML. Tudo isso espera o AI Readiness Index e o volume real, não a vontade de ter uma arquitetura completa desde o início.
 
-## 9. Decisões para o CEO
+## 10. Decisões para o CEO
 
 1. **Aprovar a mudança de foco do Shadow Mode:** IA Shadow recebe a conversa bruta (não só o perfil já estruturado por humano) e sua comparação mais valiosa no início é contra o curador na extração de perfil, não contra a matemática no score.
 2. **Aprovar que a IA Shadow, na V0, seja 100% manual** (prompt versionado rodado por uma pessoa, sem serviço/infraestrutura) até o volume justificar automatizar.
 3. **Aprovar o fluxo anti-ancoragem da curadoria:** o curador registra o próprio julgamento antes de ver qualquer sugestão da matemática ou da IA.
-4. **Aprovar os thresholds do AI Readiness Index como hipóteses de partida** (30-50 casos para sair do shadow puro, ≥70-80% de concordância IA-curador para ganhar mais autonomia), a recalibrar com dado real.
+4. **Aprovar os thresholds do AI Readiness Index como hipóteses de partida** (30-50 casos para sair do estado "Observação"), e **aprovar a adição da métrica "concordância com o curador"** (minha proposta, além das 7 dimensões do PDF) como o sinal mais confiável para autorizar mais autonomia — a recalibrar com dado real.
 5. **Aprovar que só o Psicólogo Curador Líder + CEO autorizam transições de maturidade da IA** — nunca engenharia/produto isoladamente, nunca a IA.
 6. **Confirmar quem será o Psicólogo Curador / Líder de Curadoria** entre os 3-4 parceiros iniciais — decisão de pessoas, não técnica.
 7. **Segue valendo o bloqueio de `docs/12` (seção 15):** validar LGPD/CFP/sigilo/protocolo de risco antes do primeiro paciente real — essa arquitetura não altera nem resolve esse ponto.
+8. **Aprovar que "Desafie a IA" (seção 7) fique fora do escopo de V0/V1**, condicionada a: IA fora do estado "Observação", validação jurídica/regulatória concluída, e base de psicólogos suficiente para sustentar conversão real.
+9. **Aprovar o ajuste de tom proposto para "Desafie a IA"** — substituir o enquadramento de "enganar a IA" por algo alinhado à voz calma da marca antes de qualquer copy final ir ao ar.
